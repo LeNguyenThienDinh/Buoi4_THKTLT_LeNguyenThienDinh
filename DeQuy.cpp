@@ -38,6 +38,22 @@ double khudequy_2(int n)
 	}
 	return sum;
 }
+double Tongdequy_3(int n) 
+{
+	if (n == 1)
+		return 1.0;
+	return 1.0 / (2 * n + 1) + Tongdequy_3(n - 1);
+}
+
+double khudequy_3(int n) 
+{
+	double sum = 1.0;
+	for (int i = 1; i <= n; i++) 
+	{
+		sum += 1.0 / (2 * i + 1);
+	}
+	return sum;
+}
 
 int main() {
 	int n;
@@ -63,7 +79,10 @@ int main() {
 		printf("Tong S(n) tinh bang de quy: %.6f\n", Tongdequy_2(n));
 		printf("Tong S(n) tinh bang khong de quy: %.6f\n", khudequy_2(n));
 		break;
-	
+	case 3:
+		printf("Tong S(n) tinh bang de quy: %.6f\n", Tongdequy_3(n));
+		printf("Tong S(n) tinh bang khong de quy: %.6f\n", khudequy_3(n));
+		break;
 	default:
 		printf("Lua chon khong dung!\n");
 		break;
